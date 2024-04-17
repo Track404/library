@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 200px 1fr;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.header {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  background-color: white;
+}
+
+.main-content {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: lightslategray;
+}
+
+.sidebar {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  background-color: lightskyblue;
+}
+
+#bookElement {
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.book {
+  background-color: white;
+  width: 200px;
+  height: 200px;
+}
+
+::backdrop {
+  background-color: black;
+  opacity: 0.5;
+}
