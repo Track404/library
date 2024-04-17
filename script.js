@@ -1,5 +1,5 @@
 const myLibrary = [];
-const openDialog = document.querySelector("dialog + button");
+const openDialog = document.querySelector("#openDialog");
 const dialog = document.querySelector("dialog");
 const confirmButton = document.querySelector("#confirmButton");
 
@@ -30,7 +30,6 @@ function addBooktoLibrary() {
   );
 
   myLibrary.push(book);
-  console.log(myLibrary);
   bookDisplay();
 }
 //Displaying book card on page
@@ -47,12 +46,15 @@ function bookDisplay() {
     deleteButton.setAttribute("data-index", i);
     readButton.classList.add("readButton");
     readButton.setAttribute("data-attribute", i);
-    readButton.textContent = "Have you read the book ?";
-    newDiv.innerHTML = `the name is ${myLibrary[i].name} ${myLibrary[i].author} ${myLibrary[i].pages} ${myLibrary[i].read}`;
+    readButton.textContent = "Status";
+    newDiv.innerHTML = `<div><h2>Book Name</h2><p>${myLibrary[i].name}</p><div>
+    <div><h2>Author Name</h2> <p>${myLibrary[i].author}</p><div>
+    <div><h2>Number Of Pages</h2><p>${myLibrary[i].pages}</p><div>
+    <div><h2>Book Status</h2><p>${myLibrary[i].read}</p><div>`;
     deleteButton.textContent = "Delete Card";
     bookElement.appendChild(newDiv);
-    newDiv.appendChild(deleteButton);
     newDiv.appendChild(readButton);
+    newDiv.appendChild(deleteButton);
   }
   /* make the remove card play each time card 
   are created so that .deleteButton class can be seen*/
@@ -84,11 +86,14 @@ function changeBookStatus() {
       }
       //refresh all card
       bookDisplay();
-      console.log(myLibrary);
     })
   );
 }
 
+//card template for user
+let templateBook = new theBook("Tolkien", "The hobbit", "256", "Read");
+myLibrary.push(templateBook);
+bookDisplay();
 // open the modal to complete the form
 openDialog.addEventListener("click", () => {
   dialog.showModal();

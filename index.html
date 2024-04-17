@@ -7,32 +7,44 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="header"></div>
+    <div class="header">
+      <h1>Book Library</h1>
+    </div>
     <div class="main-content">
       <div id="bookElement"></div>
     </div>
     <div class="sidebar">
       <dialog>
-        <p>Create a new book !</p>
-        <form method="dialog">
+        <h2>Create a new book !</h2>
+        <form method="get">
+          <fieldset>
+            <legend>Book Info</legend>
+            <div>
+              <label for="author">Author</label
+              ><input type="text" name="author" id="author" />
+            </div>
+            <div>
+              <label for="title">Title</label
+              ><input type="text" name="title" id="title" />
+            </div>
+            <div>
+              <label for="pages">Number of Pages</label
+              ><input type="number" name="pages" id="pages" />
+            </div>
+          </fieldset>
+
           <div>
-            <label for="author">Author</label
-            ><input type="text" name="author" id="author" />
-          </div>
-          <div>
-            <label for="title">Title</label
-            ><input type="text" name="title" id="title" />
-          </div>
-          <div>
-            <label for="pages">Number of Pages</label
-            ><input type="number" name="pages" id="pages" />
-          </div>
-          <div>
-            <fieldset>
-              <legend>have you readed the book ?</legend>
+            <fieldset name="status" id="radioField">
+              <legend>Have you readed the book ?</legend>
 
               <div>
-                <input type="radio" name="status" id="read" value="Read" />
+                <input
+                  type="radio"
+                  name="status"
+                  id="read"
+                  value="Read"
+                  checked
+                />
                 <label for="read">Read</label>
               </div>
               <div>
@@ -52,7 +64,8 @@
           </div>
         </form>
       </dialog>
-      <button>New Book</button>
+      <h2>Add your new book now !</h2>
+      <button id="openDialog">New Book</button>
     </div>
     <script src="script.js"></script>
   </body>
