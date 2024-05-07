@@ -5,11 +5,13 @@ const confirmButton = document.querySelector("#confirmButton");
 
 //constructor to create the book object
 
-function theBook(name, author, pages, read) {
-  this.name = name;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class theBook {
+  constructor(name, author, pages, read) {
+    this.name = name;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 /*Take value from the form and add it to the myLibrary array
  and displaying it on page with bookDisplay()*/
